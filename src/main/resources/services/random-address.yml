@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        random-address:
+          uri: https://fakerapi.it
+          predicates:
+            - Path=/random-address
+            - Method=GET
+          filters:
+            - SetPath=/api/v2/addresses

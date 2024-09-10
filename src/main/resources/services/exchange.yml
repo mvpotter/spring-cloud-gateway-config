@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        exchange:
+          uri: https://cdn.jsdelivr.net
+          predicates:
+            - Path=/exchange
+            - Method=GET
+          filters:
+            - SetPath=/npm/@fawazahmed0/currency-api@2024-09-10/v1/currencies/eur.json

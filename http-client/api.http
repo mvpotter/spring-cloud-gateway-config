@@ -1,0 +1,5 @@
+### Exchange
+GET http://localhost:8080/exchange
+
+### Random address
+GET http://localhost:8080/random-address

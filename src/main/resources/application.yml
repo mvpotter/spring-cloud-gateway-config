@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway-demo
+  cloud:
+    gateway:
+      routes:
+        - id: exchange
+          uri: https://cdn.jsdelivr.net
+          predicates:
+            - Path=/exchange
+            - Method=GET
+          filters:
+            - SetPath=/npm/@fawazahmed0/currency-api@2024-09-10/v1/currencies/eur.json
+        - id: random-address
+          uri: https://fakerapi.it
+          predicates:
+            - Path=/random-address
+            - Method=GET
+          filters:
+            - SetPath=/api/v2/addresses
